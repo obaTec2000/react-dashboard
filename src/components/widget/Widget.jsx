@@ -8,21 +8,19 @@ import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlin
 const Widget = ({ type }) => {
   let data;
 
-
   const amount = 100;
- 
+
   switch (type) {
     case "user":
       data = {
         title: "USERS",
-     
+
         icon: (
           <PersonOutlinedIcon
             className="icon"
             style={{
               color: "crimson",
               backgroundColor: "rgba(255, 0, 0, 0.2)",
-              
             }}
           />
         ),
@@ -31,7 +29,7 @@ const Widget = ({ type }) => {
     case "order":
       data = {
         title: "ORDERS",
-        
+
         icon: (
           <ShoppingCartOutlinedIcon
             className="icon"
@@ -46,7 +44,7 @@ const Widget = ({ type }) => {
     case "earning":
       data = {
         title: "EARNINGS",
-       
+
         icon: (
           <MonetizationOnOutlinedIcon
             className="icon"
@@ -58,7 +56,7 @@ const Widget = ({ type }) => {
     case "balance":
       data = {
         title: "BALANCE",
-      
+
         icon: (
           <AccountBalanceWalletOutlinedIcon
             className="icon"
@@ -83,10 +81,7 @@ const Widget = ({ type }) => {
         </span>
         <span className="link">{data.link}</span>
       </div>
-      <div className="right">
-      
-        {data.icon}
-      </div>
+      <div className="right">{data.icon}</div>
     </div>
   );
 };
