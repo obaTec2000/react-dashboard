@@ -1,7 +1,7 @@
 import "./sidebar.scss";
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined';
-import PeopleIcon from '@mui/icons-material/People';import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import StoreIcon from "@mui/icons-material/Store";
 import InsertChartIcon from "@mui/icons-material/InsertChart";
@@ -12,123 +12,88 @@ import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSyst
 import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { Link } from "react-router-dom";
-// import { DarkModeContext } from "../../context/darkModeContext";
+import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
 
 const Sidebar = () => {
-  // const { dispatch } = useContext(DarkModeContext);
+  const { dispatch } = useContext(DarkModeContext);
   return (
     <div className="sidebar">
       <div className="top">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <span className="logo">KingstechG</span>
+          <span className="logo">KINGSTECHG</span>
         </Link>
       </div>
       <hr />
       <div className="center">
         <ul>
-         
+          <p className="title">MAIN</p>
           <li>
             <DashboardIcon className="icon" />
             <span>Dashboard</span>
           </li>
-          <p className="title">CUSTOMER</p>
+          <p className="title">LISTS</p>
           <Link to="/users" style={{ textDecoration: "none" }}>
             <li>
-              <PeopleIcon className="icon" />
+              <PersonOutlineIcon className="icon" />
               <span>Users</span>
             </li>
           </Link>
           <Link to="/products" style={{ textDecoration: "none" }}>
             <li>
               <StoreIcon className="icon" />
-              <span>Guarantors</span>
+              <span>Products</span>
             </li>
           </Link>
           <li>
             <CreditCardIcon className="icon" />
-            <span>Loans</span>
+            <span>Orders</span>
           </li>
           <li>
             <LocalShippingIcon className="icon" />
-            <span>Decision Models</span>
+            <span>Delivery</span>
           </li>
-          <li>
-            <SavingsOutlinedIcon className="icon" />
-            <span>Savings</span>
-          </li>
-          <li>
-            <LocalShippingIcon className="icon" />
-            <span>Loan Request</span>
-          </li>
-          <li>
-            <LocalShippingIcon className="icon" />
-            <span>Whitelist</span>
-          </li>
-          <li>
-            <LocalShippingIcon className="icon" />
-            <span>Karma</span>
-          </li>
-          <p className="title">BUSINESS</p>
+          <p className="title">USEFUL</p>
           <li>
             <InsertChartIcon className="icon" />
-            <span>Organization</span>
+            <span>Stats</span>
           </li>
           <li>
             <NotificationsNoneIcon className="icon" />
-            <span>Loan Products</span>
+            <span>Notifications</span>
           </li>
-          <li>
-            <InsertChartIcon className="icon" />
-            <span>Savings Products</span>
-          </li>
-          <li>
-            <InsertChartIcon className="icon" />
-            <span>Fees and Charges</span>
-          </li>
-          <li>
-            <InsertChartIcon className="icon" />
-            <span>Transactions</span>
-          </li>
-          <li>
-            <InsertChartIcon className="icon" />
-            <span>Services</span>
-          </li>
-          <li>
-            <InsertChartIcon className="icon" />
-            <span>Service Account</span>
-          </li>
-          <li>
-            <InsertChartIcon className="icon" />
-            <span>Settlements</span>
-          </li>
-          <li>
-            <InsertChartIcon className="icon" />
-            <span>Reports</span>
-          </li>
-          <p className="title">SETTINGS</p>
+          <p className="title">SERVICE</p>
           <li>
             <SettingsSystemDaydreamOutlinedIcon className="icon" />
-            <span>Preferences</span>
+            <span>System Health</span>
           </li>
           <li>
             <PsychologyOutlinedIcon className="icon" />
-            <span>Fees and Pricing</span>
+            <span>Logs</span>
           </li>
           <li>
             <SettingsApplicationsIcon className="icon" />
-            <span>Audit Logs</span>
+            <span>Settings</span>
+          </li>
+          <p className="title">USER</p>
+          <li>
+            <AccountCircleOutlinedIcon className="icon" />
+            <span>Profile</span>
+          </li>
+          <li>
+            <ExitToAppIcon className="icon" />
+            <span>Logout</span>
           </li>
         </ul>
       </div>
       <div className="bottom">
         <div
           className="colorOption"
-          // onClick={() => dispatch({ type: "LIGHT" })}
+          onClick={() => dispatch({ type: "LIGHT" })}
         ></div>
         <div
           className="colorOption"
-          // onClick={() => dispatch({ type: "DARK" })}
+          onClick={() => dispatch({ type: "DARK" })}
         ></div>
       </div>
     </div>
